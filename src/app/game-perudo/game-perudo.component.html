@@ -4,42 +4,49 @@
     <hr class="divider">
 
     <!-- Section to select players -->
-    <div *ngIf="!showTable">
-        <h3 class="title">Select Players:</h3>
-        <div *ngFor="let player of players">
-          <input type="checkbox" [id]="player.name" [value]="player.name" (change)="onPlayerChange($event)" />
-          <label class="player-select" [for]="player.name">{{ player.name }}</label>
+  <div *ngIf="!showTable" class="select-players-section">
+    <h3 class="title">Select Players:</h3>
+    <div class="players-list">
+        <div *ngFor="let player of players" class="player-item">
+            <input type="checkbox" [id]="player.name" [value]="player.name" (change)="onPlayerChange($event)" />
+            <label class="player-select" [for]="player.name">{{ player.name }}</label>
         </div>
-        <button (click)="onReady()">Ready</button>
-      </div>
+    </div>
+    <button class="ready-button" (click)="onReady()">Ready</button>
+  </div>
+
 
     <!-- Section to display the score table -->
-    <div *ngIf="showTable">
-        <table>
-          <thead>
+  <div *ngIf="showTable && !gameEnded" class="score-table-section">
+    <table class="score-table">
+        <thead>
             <tr>
-              <th *ngFor="let player of selectedPlayers">{{ player.name }}</th>
+                <th *ngFor="let player of selectedPlayers">{{ player.name }}</th>
             </tr>
-          </thead>
-          <tbody>
+        </thead>
+        <tbody>
             <tr *ngFor="let round of rounds">
-              <td *ngFor="let player of selectedPlayers">
-                <input type="number" [(ngModel)]="round[player.name]"/>
-              </td>
+                <td *ngFor="let player of selectedPlayers">
+                    <input type="number" [(ngModel)]="round[player.name]" class="score-input" />
+                </td>
             </tr>
-          </tbody>
-        </table>
-        <button (click)="addRound()">Add Round</button>
-        <button (click)="endGame()">End Game</button>
-      </div>
+        </tbody>
+    </table>
+    <div class="table-buttons">
+        <button class="round-button" (click)="addRound()">Add Round</button>
+        <button class="end-button" (click)="endGame()">End Game</button>
+    </div>
+  </div>
+
 
     <!-- Section to display game results -->
     <div *ngIf="gameEnded">
         <h3 class="title">Game Results:</h3>
         <p class="player-select" *ngFor="let player of selectedPlayers">{{ player.name }}: {{ player.score }} points</p>
         <p class="winner" *ngIf="winner">Winner: {{ winner.name }} with {{ winner.score }} points</p>
-        <button (click)="newGame()">New Game</button>
-        <button (click)="gameMenu()">Back to Home Screen</button>
+        <div class="table-buttons">
+          <button class="new-button" (click)="newGame()">New Game</button>
+        <button class="end-button"  (click)="gameMenu()">Back to Home Screen</button>
+        </div>
       </div>
-    
 </div>
