@@ -1,0 +1,17 @@
+<div>
+    <div class="content">
+      <div *ngIf="teams.length > 0">
+        <h2>Teams</h2>
+        <!-- Divider line -->
+        <hr class="divider">
+  
+        <!-- <tr *ngFor="let team of teams" class="team-row" routerLink="/campaign/{{ campaignId }}/locations/{{ team.id}}">
+            <app-excisting-team></app-excisting-team>
+        </tr> -->
+        
+      </div>
+      <div *ngIf="teams.length === 0" class="loading-element">
+        <p>loading...</p>
+      </div>
+    </div>
+  </div>
