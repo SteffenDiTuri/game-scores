@@ -1,10 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms'; // Import FormsModule
-
-
-import { routes } from './app.routes';           // Import the routes
+import { FormsModule } from '@angular/forms';
+import { routes } from './app.routes';
 
 @NgModule({
   imports: [
@@ -12,6 +10,6 @@ import { routes } from './app.routes';           // Import the routes
     FormsModule,
     RouterModule.forRoot(routes),
   ],
-  providers: [],
+  providers: [],  // No need for HttpClientModule here
 })
 export class AppModule { }

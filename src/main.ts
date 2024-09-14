@@ -1,13 +1,12 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { AppComponent } from './app/app.component';  // Correct the path as needed
+import { AppComponent } from './app/app.component';
 import { provideRouter } from '@angular/router';
 import { routes } from './app/app.routes';
-import { importProvidersFrom } from '@angular/core';  // For importing providers from modules
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http'; // Import the correct method
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideRouter(routes),  // Provide routes
-    importProvidersFrom(HttpClientModule),  // Import HttpClientModule as a provider
+    provideRouter(routes),
+    provideHttpClient()
   ]
 }).catch(err => console.error(err));
