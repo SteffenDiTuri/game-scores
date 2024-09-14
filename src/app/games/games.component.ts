@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { GameComponent } from "../game/game.component";
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-games',
   standalone: true,
-  imports: [GameComponent, CommonModule],  // Add imports if using other components
+  imports: [GameComponent, CommonModule, RouterModule],  // Add imports if using other components
   templateUrl: './games.component.html',
   styleUrls: ['./games.component.css']
 })

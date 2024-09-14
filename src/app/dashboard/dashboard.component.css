@@ -4,13 +4,16 @@
     box-sizing: border-box;
 }
 
-body, html {
+/* styles.css */
+    html, body {
     height: 100%;
-}
+    margin: 0;
+    padding: 0;
+  }
+  
 
 .dashboard {
     height: 100%;
-    background-color: #00214C;
     color: white;
     font-family: 'Agrandir', sans-serif;
     padding: 50px 20px 20px 20px;

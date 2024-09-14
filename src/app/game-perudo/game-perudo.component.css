@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+.player-select, .title {
+    color: white;
+}
+
+.winner {
+    color: gold;
+}
+
+.dashboard {
+    height: 100%;
+    font-family: 'Agrandir', sans-serif;
+    padding: 50px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard > h1 {
+    text-align: left;
+}
+
+.divider {
+    border: 0;
+    height: 5px;
+    border-radius: 5px;
+    background: #004AAD;
+    margin: 20px 0;
+}
+
+div {
+    text-align: center;
+}
+  
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+button:hover {
+    background-color: darkgreen;
+}
+  
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+  
+li {
+    margin: 5px 0;
+}
+  
+table {
+    color: white;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+  
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+input[type="number"] {
+    width: 50px; /* Adjust the width to fit 2 digits */
+    box-sizing: border-box; /* Ensures padding and border are included in the width */
+    text-align: center;
+  }

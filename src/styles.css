@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 /* Basic Reset */
-* {
+.base {
+    background-color: #00214C;
     margin: 0;
     padding: 0;
     box-sizing: border-box;

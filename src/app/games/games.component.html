@@ -1,10 +1,9 @@
 <div>
-    <h2>Choose a Game to play...</h2>
-    <div *ngIf="games.length; else noGames">
-      <div *ngFor="let game of games">
-        <app-game [game]="game"></app-game>
+    <h2 class="title">Choose a Game to play...</h2>
+    <div class="game-container">
+        <button class="game-button" [routerLink]="['/perudo']">Perudo</button>
+        <!-- Add more buttons for other games as needed -->
       </div>
-    </div>
     <ng-template #noGames>
       <p>No games found.</p>
     </ng-template>

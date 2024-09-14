@@ -1,7 +1,6 @@
 <!-- game.component.html -->
 <div class="game-container">
-    <button class="game-button" [routerLink]="['/perudo']">
-      {{ game.title }}
-    </button>
+    <button [routerLink]="['/game-' + game.name.toLowerCase()]">{{ game.name }}</button>
+
 </div>
   

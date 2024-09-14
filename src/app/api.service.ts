@@ -31,4 +31,8 @@ export class ApiService {
     return this.http.get<any>(url, { headers: this.headers });
   }
   
+  getPlayers(): Observable<any> {
+    const url = this.apiUrl + '/characters'; // Correct URL
+    return this.http.get<any>(url, { headers: this.headers });
+  }
 }
