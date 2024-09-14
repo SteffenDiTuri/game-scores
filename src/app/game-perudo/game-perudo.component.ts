@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './game-perudo.component.html',
-  styleUrl: './game-perudo.component.css'
+  styleUrls: ['./game-perudo.component.css'] // Fixed `styleUrls` typo
 })
 
 export class GamePerudoComponent {
@@ -19,8 +19,9 @@ export class GamePerudoComponent {
   players: any[] = [];
   selectedPlayers: any[] = [];
   rounds: any[] = [];
-  gameEnded: any;
+  gameEnded: boolean = false;
   winner: any;
+  finalScores: { [key: string]: number } = {}; // Added finalScores to store scores
 
   constructor(private apiService: ApiService, private router: Router) {}
 
@@ -41,10 +42,6 @@ export class GamePerudoComponent {
     }
   }
 
-  saveScores(){
-
-  }
-
   // Method to add a new round
   addRound(): void {
     const newRound: { [key: string]: number } = {};
@@ -59,7 +56,7 @@ export class GamePerudoComponent {
 
   // Method to get player names
   getPlayerNames(): string[] {
-    return this.players; // Ensure this matches the keys in scoreData
+    return this.players.map(player => player.name); // Ensure this matches the keys in scoreData
   }
 
   // Method to get round indices
@@ -70,25 +67,26 @@ export class GamePerudoComponent {
   endGame() {
     this.gameEnded = true;
     this.calculateScores();
+    this.saveGame();
   }
 
   calculateScores() {
-    const finalScores: { [key: string]: number } = {};
+    this.finalScores = {}; // Initialize finalScores
 
     this.selectedPlayers.forEach(player => {
-      finalScores[player.name] = 0; // Initialize player scores
+      this.finalScores[player.name] = 0; // Initialize player scores
     });
 
     this.rounds.forEach(round => {
       for (const playerName in round) {
         if (round.hasOwnProperty(playerName)) {
-          finalScores[playerName] = (finalScores[playerName] || 0) + (round[playerName] || 0);
+          this.finalScores[playerName] = (this.finalScores[playerName] || 0) + (round[playerName] || 0);
         }
       }
     });
 
     this.selectedPlayers.forEach(player => {
-      player.score = finalScores[player.name] || 0;
+      player.score = this.finalScores[player.name] || 0;
     });
 
     this.winner = this.selectedPlayers.reduce((prev, curr) => (prev.score > curr.score ? prev : curr), this.selectedPlayers[0]);
@@ -100,6 +98,41 @@ export class GamePerudoComponent {
 
   gameMenu() {
     this.router.navigate(['/']); 
+  }
+
+  saveGame() {
+    const eventName = 'Perudo'; // Set the event name as required
+    const eventEntry = this.transformScoresToString();
+    const currentDate = new Date().toISOString().split('T')[0]; // Get current date in YYYY-MM-DD format
+
+  
+    this.apiService.saveGame({ name: eventName, entry: eventEntry, date: currentDate }).subscribe(
+      response => {
+        console.log('Game saved successfully:', response);
+        // Handle successful save (e.g., show a confirmation message to the user)
+      },
+      error => {
+        console.error('Error saving game:', error);
+        // Handle error (e.g., show an error message to the user)
+      }
+    );
+  }
+  
+  // Method to transform finalScores into the required string format
+  transformScoresToString(): string {
+    // Create an array to hold individual player score strings
+    const scoreStrings: string[] = [];
+  
+    // Iterate through finalScores to build each player's score string
+    for (const playerName in this.finalScores) {
+      if (this.finalScores.hasOwnProperty(playerName)) {
+        // Push the player score string to the array
+        scoreStrings.push(`${playerName}: ${this.finalScores[playerName]}`);
+      }
+    }
+  
+    // Join the player score strings with commas and wrap in <p> tags
+    return `<p>${scoreStrings.join(', ')}</p>`;
   }
 }
 

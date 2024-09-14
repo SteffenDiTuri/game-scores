@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+.game, .title {
+    color: white;
+}
+
+
+.dashboard {
+    height: 100%;
+    font-family: 'Agrandir', sans-serif;
+    padding: 50px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard > h1 {
+    text-align: left;
+}
+
+.divider {
+    border: 0;
+    height: 5px;
+    border-radius: 5px;
+    background: #004AAD;
+    margin: 20px 0;
+}
+
+.game-divider {
+    border: 0;
+    height: 2px;
+    border-radius: 5px;
+    background: #00214C;
+    margin: 20px 0;
+}
+
+div {
+    text-align: center;
+}
+
+.dashboard {
+    padding: 20px;
+  }
+  
+  .title {
+    text-align: center;
+  }
+  
+  .game {
+    margin-bottom: 20px;
+    background: #004AAD;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  .game-name {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #00214C;
+}
+
+.game-date {
+    font-size: 1rem;
+    color: rgb(156, 156, 156);
+    font-style: italic;
+    padding-left: 15px;
+    padding-top: 5px;
+}
+
+  .base-data {
+    display: flex;
+    align-items: center;
+}
+  
+  .scores-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Adjust spacing between score items as needed */
+  }
+  
+  .score-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;    /* Center align items horizontally */
+    gap: 10px; 
+  }
+
+  .score-name{
+    font-weight: bold;
+    color: #98cedf;
+  }

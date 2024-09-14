@@ -1,0 +1,20 @@
+<div class="dashboard">
+    <h1 class="title">Played Games</h1>
+    <hr class="divider">
+  
+    <div *ngFor="let game of games" class="game">
+        <div class="base-data">
+            <h2 class="game-name">{{ game.name }}</h2>
+            <p class="game-date">{{ game.date }}</p>
+        </div>
+      
+        <hr class="game-divider">
+        <div class="scores-container">
+            <div *ngFor="let score of game.entry" class="score-item">
+            <span class="score-name">{{ score.name }}:</span>
+            <span class="score-score">{{ score.score }}</span>
+            </div>
+        </div>
+    </div>
+</div>
+  

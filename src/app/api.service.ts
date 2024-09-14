@@ -36,4 +36,14 @@ export class ApiService {
     const url = this.apiUrl + '/characters'; // Correct URL
     return this.http.get<any>(url, { headers: this.headers });
   }
+
+  saveGame(gameData: any): Observable<any> {
+    const url = this.apiUrl + '/events';
+    return this.http.post<any>(url, gameData, { headers: this.headers });
+  }
+
+  getPlayedGames(): Observable<any> {
+    const url = this.apiUrl + '/events'; // Correct URL
+    return this.http.get<any>(url, { headers: this.headers });
+  }
 }
