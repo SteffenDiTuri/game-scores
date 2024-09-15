@@ -5,7 +5,7 @@
 
     <!-- Section to select players -->
   <div *ngIf="!showTable" class="select-players-section">
-    <h3 class="title">Select Players:</h3>
+    <h3 class="subtitle">Select Players:</h3>
     <div class="players-list">
         <div *ngFor="let player of players" class="player-item">
             <input type="checkbox" [id]="player.name" [value]="player.name" (change)="onPlayerChange($event)" />

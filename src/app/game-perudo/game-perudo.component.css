@@ -87,7 +87,8 @@ input[type="number"] {
     text-align: center;
 }
 
-.title {
+.subtitle {
+    color: white;
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
@@ -130,11 +131,12 @@ input[type="checkbox"] {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
-    transition: background-color 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .ready-button:hover {
-    background-color: #45a049;
+    background-color: white; 
+    color:#4CAF50;
 }
 
 /* score table */
@@ -146,8 +148,12 @@ input[type="checkbox"] {
     font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: 0.3s ease;
 }
+.round-button:hover {
+    background-color: white; 
+    color:#004AAD;
+  }
 
 .end-button {
     background-color: red;
@@ -157,7 +163,11 @@ input[type="checkbox"] {
     font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: 0.3s ease;
+}
+.end-button:hover {
+    background-color: white; 
+    color:red;
 }
 
 .new-button {
@@ -168,18 +178,12 @@ input[type="checkbox"] {
     font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: 0.3s ease;
 }
 
-.new-button {
-    background-color: #004AAD;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.new-button:hover {
+    background-color: white; 
+    color:orange;
 }
 
 .table-buttons {
