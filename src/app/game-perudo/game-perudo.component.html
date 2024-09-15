@@ -33,8 +33,6 @@
                 class="score-input" 
                 min="0" 
                 [max]="selectedPlayers.length"
-                placeholder="" 
-                [value]="round[player.name] !== 0 ? round[player.name] : null"
                 (input)="checkValue(round, player)"
               />
             </td>

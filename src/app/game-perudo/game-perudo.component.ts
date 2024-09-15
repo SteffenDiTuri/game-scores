@@ -55,7 +55,7 @@ export class GamePerudoComponent {
 
   // Method to add a new round
   addRound(): void {
-    const newRound: { [key: string]: number } = {};
+    const newRound: { [key: string]: number | null} = {};
     this.selectedPlayers.forEach(player => newRound[player.name] = 0);
     this.rounds.push(newRound);
   }

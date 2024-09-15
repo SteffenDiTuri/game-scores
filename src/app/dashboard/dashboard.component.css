@@ -34,3 +34,14 @@
     background: #004AAD;
     margin: 20px 0;
 }
+
+.header-data{
+    display: flex;
+    align-items: baseline;
+}
+
+.header-data p {
+    font-size: 0.75rem;
+    padding-left: 10px;
+    font-style: italic;
+}
