@@ -25,11 +25,20 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let round of rounds">
-                <td *ngFor="let player of selectedPlayers">
-                    <input type="number" [(ngModel)]="round[player.name]" class="score-input" />
-                </td>
-            </tr>
+          <tr *ngFor="let round of rounds">
+            <td *ngFor="let player of selectedPlayers">
+              <input 
+                type="number" 
+                [(ngModel)]="round[player.name]" 
+                class="score-input" 
+                min="0" 
+                [max]="selectedPlayers.length"
+                placeholder="" 
+                [value]="round[player.name] !== 0 ? round[player.name] : null"
+                (input)="checkValue(round, player)"
+              />
+            </td>
+          </tr>
         </tbody>
     </table>
     <div class="table-buttons">
@@ -45,6 +54,7 @@
         <p class="player-select" *ngFor="let player of selectedPlayers">
           {{ player.name }}: {{ player.score }} points
         </p>
+        <br>
         <p class="winner" *ngFor="let winner of winners">
           Winner: {{ winner.name }} with {{ winner.score }} points
         </p>

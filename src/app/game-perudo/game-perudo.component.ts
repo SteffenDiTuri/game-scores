@@ -31,6 +31,15 @@ export class GamePerudoComponent {
     });
   }
 
+  checkValue(round: any, player: any) {
+    if (round[player.name] < 0) {
+      round[player.name] = 0; // Prevent negative values
+    }
+    if (round[player.name] > this.selectedPlayers.length) {
+      round[player.name] = this.selectedPlayers.length; // Cap the value to the max number of players
+    }
+  }  
+
   onPlayerChange(event: any): void {
     const isChecked = event.target.checked;
     const playerName = event.target.value;
