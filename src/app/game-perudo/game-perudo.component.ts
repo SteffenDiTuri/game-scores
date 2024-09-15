@@ -3,6 +3,8 @@ import { ApiService } from '../api.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import confetti from 'canvas-confetti'; // Import confetti
+
 
 @Component({
   selector: 'app-game-perudo',
@@ -77,6 +79,16 @@ export class GamePerudoComponent {
     this.gameEnded = true;
     this.calculateScores();
     this.saveGame();
+    this.launchConfetti(); // Trigger confetti when the game ends
+  }
+  // Confetti effect when the game ends
+  launchConfetti() {
+    confetti({
+      particleCount: 200, // Number of confetti particles
+      spread: 100,        // Spread angle of confetti
+      origin: { y: 0.6 }, // Starting point (lower makes it shoot higher)
+      colors: ['#bb0000', '#ffffff'], // Customize colors
+    });
   }
 
   calculateScores() {
