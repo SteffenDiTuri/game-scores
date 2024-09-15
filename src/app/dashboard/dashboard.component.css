@@ -45,3 +45,34 @@
     padding-left: 10px;
     font-style: italic;
 }
+
+/* Dummy games section */
+.dummy-games {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px; /* Space between dummy games */
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.dummy-game-container {
+    position: relative; /* Container needs to be positioned relative */
+}
+
+.dummy-game {
+    width: 100px; /* Width of the dummy game */
+    height: 100px; /* Height of the dummy game */
+    background-color: #004AAD; /* Placeholder color for the game image */
+    border-radius: 15px; /* Rounded corners */
+}
+
+.ranking {
+    position: absolute;
+    top: 70px;
+    right: 65px;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 2rem;
+    font-weight: bold;
+}
