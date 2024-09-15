@@ -1,7 +1,10 @@
 <div>
     <h2 class="title">Choose a Game to play...</h2>
     <div class="game-container">
-        <button class="game-button" [routerLink]="['/perudo']">Perudo</button>
+        <button class="perudo-button" [routerLink]="['/perudo']">
+          <img src="assets/perudo.png" alt="Perudo" class="button-image">
+          Perudo
+        </button>
         <!-- Add more buttons for other games as needed -->
       </div>
     <ng-template #noGames>
