@@ -42,11 +42,16 @@
     <!-- Section to display game results -->
     <div *ngIf="gameEnded">
         <h3 class="title">Game Results:</h3>
-        <p class="player-select" *ngFor="let player of selectedPlayers">{{ player.name }}: {{ player.score }} points</p>
-        <p class="winner" *ngIf="winner">Winner: {{ winner.name }} with {{ winner.score }} points</p>
+        <p class="player-select" *ngFor="let player of selectedPlayers">
+          {{ player.name }}: {{ player.score }} points
+        </p>
+        <p class="winner" *ngFor="let winner of winners">
+          Winner: {{ winner.name }} with {{ winner.score }} points
+        </p>
+        <!-- <p class="winner" *ngIf="winners">Winner: {{ winner.name }} with {{ winner.score }} points</p> -->
         <div class="table-buttons">
           <button class="new-button" (click)="newGame()">New Game</button>
-        <button class="end-button"  (click)="gameMenu()">Back to Home Screen</button>
+          <button class="end-button" (click)="gameMenu()">Back to Home Screen</button>
         </div>
       </div>
 </div>

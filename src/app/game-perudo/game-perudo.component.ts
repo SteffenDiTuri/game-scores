@@ -20,7 +20,7 @@ export class GamePerudoComponent {
   selectedPlayers: any[] = [];
   rounds: any[] = [];
   gameEnded: boolean = false;
-  winner: any;
+  winners: any[] = [];
   finalScores: { [key: string]: number } = {}; // Added finalScores to store scores
 
   constructor(private apiService: ApiService, private router: Router) {}
@@ -89,7 +89,13 @@ export class GamePerudoComponent {
       player.score = this.finalScores[player.name] || 0;
     });
 
-    this.winner = this.selectedPlayers.reduce((prev, curr) => (prev.score > curr.score ? prev : curr), this.selectedPlayers[0]);
+    // this.winner = this.selectedPlayers.reduce((prev, curr) => (prev.score > curr.score ? prev : curr), this.selectedPlayers[0]);
+    // Find the maximum score
+    const maxScore = Math.max(...this.selectedPlayers.map(player => player.score));
+
+    // Find all players with the maximum score
+    this.winners = this.selectedPlayers.filter(player => player.score === maxScore);
+
   }
 
   newGame() {
