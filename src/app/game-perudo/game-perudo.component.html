@@ -12,8 +12,13 @@
             <label class="player-select" [for]="player.name">{{ player.name }}</label>
         </div>
     </div>
-    <button class="ready-button" (click)="onReady()">Ready</button>
-  </div>
+      <button
+        class="ready-button" 
+        (click)="onReady()" 
+        [disabled]="selectedPlayers.length === 0"
+        > Ready
+      </button>
+    </div>
 
 
     <!-- Section to display the score table -->

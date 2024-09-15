@@ -138,6 +138,11 @@ input[type="checkbox"] {
     background-color: white; 
     color:#4CAF50;
 }
+.ready-button:disabled {
+    background-color: #ccc; /* Grey background */
+    cursor: not-allowed; /* Change cursor to not-allowed */
+    opacity: 0.6; /* Reduce opacity */
+  }
 
 /* score table */
 .round-button {
