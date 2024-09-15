@@ -1,0 +1,11 @@
+<div class="dashboard">
+    <div class="header-data">
+        <h1>Settings</h1>
+    </div>
+    <hr class="divider">
+
+    <div class="buttons">
+        <button (click)="goToTeamGenerator()" class="button">Generate Teams</button>
+        <button (click)="goToBracketGenerator()" class="button" [disabled]="isBracketDisabled">Generate Bracket</button>
+    </div>
+</div>

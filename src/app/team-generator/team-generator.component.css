@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* styles.css */
+    html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+
+.dashboard {
+    height: 100%;
+    color: white;
+    font-family: 'Agrandir', sans-serif;
+    padding: 50px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Center content */
+.dashboard > h1 {
+    text-align: left;
+}
+
+/* Divider line */
+.divider {
+    border: 0;
+    height: 5px;
+    border-radius: 5px;
+    background: #004AAD;
+    margin: 20px 0;
+}
+
+.header-data{
+    display: flex;
+    align-items: baseline;
+}
+
+.header-data p {
+    font-size: 0.75rem;
+    padding-left: 10px;
+    font-style: italic;
+}
+
+.button {
+    background-color: #004AAD; 
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+  .button:hover {
+    background-color: white; 
+    color:#004AAD;
+  }
+  
+  .ready-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s ease;
+}
+
+.ready-button:hover {
+    background-color: white; 
+    color:#4CAF50;
+}
+.ready-button:disabled {
+    background-color: #ccc; /* Grey background */
+    cursor: not-allowed; /* Change cursor to not-allowed */
+    opacity: 0.6; /* Reduce opacity */
+  }
+  
+  /* select players area */
+.select-players-section {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.subtitle {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.players-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.player-item {
+    background-color: #004AAD;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2); /* Larger checkbox */
+}
+
+.player-select {
+    font-size: 1rem;
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+    cursor: pointer;
+}
+
+/* General Styling */
+.teams-section {
+    background-color: #004AAD;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    color: white;
+  }
+  
+  .subtitle {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+  
+  .teams-section h4 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #66CCFF; /* Accent color for team titles */
+  }
+  
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  ul li {
+    background-color: #00214C;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.1em;
+  }
+  
+  /* Buttons Styling */
+  .regenerate-button {
+    margin-top: 20px;
+    background-color: orange;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+  }
+  
+  .regenerate-button:hover{
+    background-color: white; 
+    color: orange;
+  }
+
+  .reselect-button {
+    margin-top: 20px;
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+  }
+  
+  .reselect-button:hover{
+    background-color: white; 
+    color: red;
+  }
+  
+  .buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .re-buttons {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    gap: 20px; /* Adds space between the buttons */
+  }

@@ -1,0 +1,64 @@
+/* Outer container styles */
+.outer-container {
+    background-color: #00214C;
+    width: 100%;
+    padding-bottom: 35px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Inner container styles */
+  .inner-container {
+    background-color: #004AAD;
+    min-width: 85%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 50px; /* Rounded corners */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  /* Button styles */
+  .footer-button {
+    background-color: #00214C; /* Same color as the outer container */
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Circle shape */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .footer-button-plus {
+    background-color: white; /* Same color as the outer container */
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Circle shape */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Button icon styles */
+  .footer-button img, .footer-button-plus img {
+    width: 25px; /* Adjust icon size */
+    height: 25px;
+  }
+  
+  /* Hover effect for buttons */
+  .footer-button:hover {
+    background-color: white; /* Slightly lighter hover effect */
+  }
+  

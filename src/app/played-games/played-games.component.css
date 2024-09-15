@@ -99,3 +99,51 @@ div {
     font-weight: bold;
     color: #98cedf;
   }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* styles.css */
+    html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+
+.dashboard {
+    height: 100%;
+    color: white;
+    font-family: 'Agrandir', sans-serif;
+    padding: 50px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Center content */
+.dashboard > h1 {
+    text-align: left;
+}
+
+/* Divider line */
+.divider {
+    border: 0;
+    height: 5px;
+    border-radius: 5px;
+    background: #004AAD;
+    margin: 20px 0;
+}
+
+.header-data{
+    display: flex;
+    align-items: baseline;
+}
+
+.header-data p {
+    font-size: 0.75rem;
+    padding-left: 10px;
+    font-style: italic;
+}
