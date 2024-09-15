@@ -7,9 +7,9 @@
   }
   
   .game-button {
-    background-color: #004AAD; 
+    background-color: white; 
     border: none;
-    color: white;
+    color: #004AAD;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -22,6 +22,6 @@
   }
   
   .game-button:hover {
-    background-color: white; 
-    color:#004AAD;
+    background-color: #004AAD; 
+    color:white;
   }
